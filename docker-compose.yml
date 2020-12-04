@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  store:
+    image: wordpress
+    container_name: wordpress_site
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER:-siteu}
+      WORDPRESS_DB_NAME: ${DB_NAME:-sitedb}
+      WORDPRESS_DB_PASSWORD: ${DB_PASS:-RBpx9GBqaW4->pwF}
+    volumes:
+      - ./site:/var/www/html:delegated
+    networks:
+      - wordpress-platform
+
+  db:
+    image: mysql:5.7
+    container_name: wordpress_db
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:-4DQ.<Ya9!K,63R.z}
+      MYSQL_USER: ${DB_USER:-siteu}
+      MYSQL_DATABASE: ${DB_NAME:-sitedb}
+      MYSQL_PASSWORD: ${DB_PASS:-RBpx9GBqaW4->pwF}
+    volumes:
+      - ./database/db-data:/var/lib/mysql
+      - ./database/dump:/docker-entrypoint-initdb.d
+    networks:
+      - wordpress-platform
+
+volumes:
+  database: {}
+  site: {}
+
+networks:
+  wordpress-platform:
+    driver: bridge

@@ -1,0 +1,14 @@
+# DATABASE
+database/db-data/
+database/.idea/
+!database/dump/
+
+
+
+#PLATFORM
+.idea/
+
+
+#site
+site/.idea/
+
