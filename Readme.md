@@ -29,7 +29,7 @@ $ git clone https://github.com/ypasoft/wordpress-docker-compose.git
 
 3. Go to the cloned directory:
 ```bash
-$ cd enpp-platform
+$ cd wordpress-platform
 ```
 
 4. Run the application:
