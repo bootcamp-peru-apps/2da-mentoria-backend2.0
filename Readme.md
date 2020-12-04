@@ -19,7 +19,7 @@ $ cp .env.copy .env
 ## How to run it?
 1. Clone the repository:
 ```bash
-$ git clone https://github.com/ypasoft/wordpress-docker-compose.git
+$ git clone https://github.com/ypasoft/wordpress-docker-compose.git 
 ```
 
 2. We are using shared fol ders to enable live code reloading. Without this, Docker Compose will not start:
@@ -29,7 +29,7 @@ $ git clone https://github.com/ypasoft/wordpress-docker-compose.git
 
 3. Go to the cloned directory:
 ```bash
-$ cd wordpress-platform
+$ cd wordpress-docker-compose
 ```
 
 4. Run the application:
