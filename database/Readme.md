@@ -1,4 +1,4 @@
-# ENPP DATABASE
+# DATABASE
 
 ## Backup
 ```bash
